@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_item_select_pic"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@mipmap/icon_xiang_ji">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/iv_item_select_pic_del"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="right|top"
+            android:src="@mipmap/icon_img_delete">
+        </ImageView>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_item_select_pic_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加图片"/>
+</LinearLayout>
+
