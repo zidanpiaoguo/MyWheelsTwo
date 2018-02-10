@@ -31,6 +31,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.OrientationEventListener;
@@ -172,13 +173,14 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
                             isRxPermissionGranted = true;
                         } else {
                             // Oups permission denied
-                            LogUtil.d("TANHQ===> camera permission error！");
+
                             isRxPermissionGranted = false;
-//                            ToastUtil.showToast("需要相关权限!");
+
                         }
                     }
                 }));
     }
+
 
     /**
      * move from onResume function
@@ -210,7 +212,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         }
 
         resetStatusView();
-
         beepManager.updatePrefs();
         ambientLightManager.start(cameraManager);
 
@@ -237,6 +238,28 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         } else {
             // Install the callback and wait for surfaceCreated() to init the camera.
             LogUtil.i("TANHQ===> surfaceHolder.addCallback ");
+            surfaceHolder.addCallback(this);
+        }
+    }
+
+
+    private void init(){
+
+        cameraManager = new CameraManager(getApplication());
+        viewfinderView  = (ViewfinderView) findViewById(R.id.viewfinder_view);
+        viewfinderView.setCameraManager(cameraManager);
+        source = IntentSource.NONE;
+
+        sourceUrl = null ;
+        characterSet = null;
+        decodeFormats =null;
+        SurfaceView surfaceView = (SurfaceView) findViewById(R.id.preview_view);
+        SurfaceHolder surfaceHolder =surfaceView.getHolder();
+
+        if (hasSurface) {
+            if (!isRxPermissionGranted) return;
+            initCamera(surfaceHolder);
+        } else {
             surfaceHolder.addCallback(this);
         }
     }
@@ -283,7 +306,11 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         }
 
         return screenOrientation;
+
+
+
     }
+
 
     @Override
     protected void onPause() {
@@ -321,6 +348,10 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         super.onDestroy();
     }
 
+
+
+
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
@@ -350,6 +381,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         return super.onKeyDown(keyCode, event);
     }
 
+
+
+
     private void decodeOrStoreSavedBitmap(Bitmap bitmap, Result result) {
         // Bitmap isn't used yet -- will be used soon
         if (handler == null) {
@@ -374,7 +408,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         if (!hasSurface) {
             hasSurface = true;
 
-            //没有授权，不能打开Camera
+
             if (!isRxPermissionGranted) return;
             initCamera(holder);
         }
@@ -383,6 +417,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         hasSurface = false;
+
     }
 
     @Override

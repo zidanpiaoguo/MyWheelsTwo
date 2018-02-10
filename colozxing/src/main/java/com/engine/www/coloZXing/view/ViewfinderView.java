@@ -24,6 +24,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
@@ -58,13 +59,13 @@ public final class ViewfinderView extends View {
     private final int maskColor;
     //add by ta
     private Bitmap scanLight; // 扫描线bitmap
-    private int innercornercolor; // 扫描框边角颜色
-    private int innercornerlength; // 扫描框边角长度
-    private int innercornerwidth;   // 扫描框边角宽度
+    private int innercornercolor;
+    private int innercornerlength;
+    private int innercornerwidth;
 
     private int scanLineTop; // 扫描线移动的y
-    private int SCAN_VELOCITY; // 扫描线移动速度
-    private boolean isCircle; // 是否展示小圆点
+    private int SCAN_VELOCITY;
+    private boolean isCircle;
 
     //end add
     private final int resultColor;
@@ -94,7 +95,7 @@ public final class ViewfinderView extends View {
     }
 
     /**
-     * 初始化内部框的大小
+     *
      *
      * @param context
      * @param attrs
@@ -102,11 +103,11 @@ public final class ViewfinderView extends View {
     private void initInnerRect(Context context, AttributeSet attrs) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.innerrect);
 
-        // 扫描框边角颜色
+
         innercornercolor = ta.getColor(R.styleable.innerrect_inner_corner_color, context.getResources().getColor(R.color.triangle_color));
-        // 扫描框边角长度
+
         innercornerlength = (int) ta.getDimension(R.styleable.innerrect_inner_corner_length, 65);
-        // 扫描框边角宽度
+
         innercornerwidth = (int) ta.getDimension(R.styleable.innerrect_inner_corner_width, 15);
 
         // 扫描bitmap
@@ -127,7 +128,7 @@ public final class ViewfinderView extends View {
 
     public void setCameraManager(CameraManager cameraManager) {
         this.cameraManager = cameraManager;
-        //invalidate();//重新进入可能不刷新，所以调用一次。
+
     }
 
     @SuppressLint("DrawAllocation")
@@ -220,7 +221,7 @@ public final class ViewfinderView extends View {
     }
 
     /**
-     * 绘制取景框边框
+     *
      *
      * @param canvas
      * @param frame
@@ -232,22 +233,22 @@ public final class ViewfinderView extends View {
         int corWidth = innercornerwidth;
         int corLength = innercornerlength;
 
-        // 左上角
+
         canvas.drawRect(frame.left, frame.top, frame.left + corWidth, frame.top
                 + corLength, paint);
         canvas.drawRect(frame.left, frame.top, frame.left
                 + corLength, frame.top + corWidth, paint);
-        // 右上角
+
         canvas.drawRect(frame.right - corWidth, frame.top, frame.right,
                 frame.top + corLength, paint);
         canvas.drawRect(frame.right - corLength, frame.top,
                 frame.right, frame.top + corWidth, paint);
-        // 左下角
+
         canvas.drawRect(frame.left, frame.bottom - corLength,
                 frame.left + corWidth, frame.bottom, paint);
         canvas.drawRect(frame.left, frame.bottom - corWidth, frame.left
                 + corLength, frame.bottom, paint);
-        // 右下角
+
         canvas.drawRect(frame.right - corWidth, frame.bottom - corLength,
                 frame.right, frame.bottom, paint);
         canvas.drawRect(frame.right - corLength, frame.bottom - corWidth,
@@ -255,7 +256,7 @@ public final class ViewfinderView extends View {
     }
 
     /**
-     * 绘制移动扫描线
+     *
      *
      * @param canvas
      * @param frame
@@ -301,6 +302,8 @@ public final class ViewfinderView extends View {
         synchronized (points) {
             points.add(point);
             int size = points.size();
+
+
             if (size > MAX_RESULT_POINTS) {
                 // trim it
                 points.subList(0, size - MAX_RESULT_POINTS / 2).clear();

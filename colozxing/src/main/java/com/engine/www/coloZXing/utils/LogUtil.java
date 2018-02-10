@@ -9,12 +9,12 @@ import java.util.Locale;
  */
 public class LogUtil {
 
-    private static boolean isLogEnabled = true;// true: 开启日志; false: 关闭日志
-    private static final String defaultTag = "coloZXing";// log默认的 tag
+    private static boolean isLogEnabled = true;
+    private static final String defaultTag = "coloZXing";
     private static final String TAG_CONTENT_PRINT = "%s.%s:%d";
 
     /**
-     * 获得当前的 堆栈
+     *
      *
      * @return
      */
@@ -33,7 +33,7 @@ public class LogUtil {
     }
 
     /**
-     * 打印的log信息 类名.方法名:行数--->msg
+     *
      *
      * @param trace
      * @return
