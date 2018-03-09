@@ -217,8 +217,6 @@ public class ImagePreviewActivity extends Activity implements IImagePreview {
         } else {
             loadImage(mBeginIndex, mImageSrcList.get(mBeginIndex), iv_show, true);
         }
-
-
     }
 
     @Override

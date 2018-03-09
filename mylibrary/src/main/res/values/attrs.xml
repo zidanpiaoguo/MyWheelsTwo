@@ -11,6 +11,7 @@
     </declare-styleable>
 
 
+    <!--圆点指示器-->
     <declare-styleable name="CircleIndicator">
         <attr name="ci_width" format="dimension"/>
         <attr name="ci_height" format="dimension"/>
@@ -65,4 +66,28 @@
         </attr>
 
     </declare-styleable>
+
+
+
+    <!--轮播图-->
+    <declare-styleable name="banner">
+        <attr name="showPoint" format="boolean" />
+        <attr name="pointPosition" format="enum">
+            <enum name="CENTER" value="0" />
+            <enum name="LEFT" value="1" />
+            <enum name="RIGHT" value="2" />
+        </attr>
+        <attr name="showType" format="enum">
+            <enum name="NORMAL" value="0" />
+            <enum name="GALLERY" value="1" />
+        </attr>
+        <attr name="pageMargin" format="integer" />
+        <attr name="points_container_background" format="reference|color" />
+        <attr name="autoPalyTime" format="integer" />
+        <attr name="pointMarginLeft" format="dimension" />
+        <attr name="pointMarginTop" format="dimension" />
+        <attr name="pointMarginRight" format="dimension" />
+        <attr name="pointMarginBottom" format="dimension" />
+    </declare-styleable>
+
 </resources>

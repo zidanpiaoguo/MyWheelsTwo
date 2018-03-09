@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     package="com.lzy.mywheelstwo">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,21 +13,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name=".librarytest.DialogTest"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".librarytest.DialogTest" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".librarytest.PictureTest"></activity>
-        <activity android:name=".librarytest.BigImageTest"></activity>
+        <activity android:name=".librarytest.PictureTest" />
+        <activity android:name=".librarytest.BigImageTest" />
         <activity
             android:name="com.lzy.mylibrary.utils.bigimage.ImagePreviewActivity"
             android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
+        <activity android:name=".librarytest.IndicatorTest"></activity>
+        <activity android:name=".librarytest.ZxingTest">
 
         </activity>
-        <activity android:name=".librarytest.IndicatorTest">
-        </activity>
-        <activity android:name=".librarytest.ZxingTest">
+        <activity android:name=".librarytest.EventActivity"></activity>
+
+
+        <activity android:name=".librarytest.BannerAcitvity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -34,6 +34,8 @@ public class ZxingTest extends AppCompatActivity {
     }
 
 
+
+
     private void initView() {
         btZxing = (Button) findViewById(R.id.bt_zxing);
         btZxing.setOnClickListener(new View.OnClickListener() {
