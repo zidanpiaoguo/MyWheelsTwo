@@ -22,4 +22,7 @@ public class HomeAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
     protected void convert(BaseViewHolder helper, String item) {
 
     }
+
+
+
 }

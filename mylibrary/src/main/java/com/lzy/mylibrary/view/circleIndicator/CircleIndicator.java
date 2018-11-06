@@ -29,6 +29,8 @@ public class CircleIndicator extends LinearLayout {
     private int mIndicatorWidth = -1;
     private int mIndicatorHeight = -1;
     private int mAnimatorResId = R.animator.scale_with_alpha;
+
+//    private int mAnimatorResId = R.animator.scale_my_alpha;
     private int mAnimatorReverseResId = 0;
     private int mIndicatorBackgroundResId = R.drawable.white_radius;
     private int mIndicatorUnselectedBackgroundResId = R.drawable.white_radius;

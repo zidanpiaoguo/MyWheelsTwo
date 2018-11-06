@@ -6,7 +6,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,8 +22,8 @@ public class MyDialog extends Dialog{
     public static final int DIALOG_ONEOPTION = 1;
     public static final int DIALOG_TWOOPTION = -1;
 
-    private Button yes;
-    private Button no;
+    private TextView liftBtn, RightBtn;
+
     private TextView textText;
     private TextView dialogMsg;
     private String title;
@@ -137,18 +136,17 @@ public class MyDialog extends Dialog{
         } else {
             this.setContentView(R.layout.view_dialog_two);
         }
-        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT);
+        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         initView();
         initAction();
     }
 
     private void initView() {
         if (type != DIALOG_ONEOPTION) {
-            no = (Button) findViewById(R.id.dialog_no);
+            RightBtn =  findViewById(R.id.dialog_no);
             if (cancletext == null || cancletext.equals("")) {
             } else {
-                no.setText(cancletext);
+                RightBtn.setText(cancletext);
             }
         }
         textText = (TextView) findViewById(R.id.text);
@@ -157,10 +155,10 @@ public class MyDialog extends Dialog{
         } else {
             textText.setText(title);
         }
-        yes = (Button) findViewById(R.id.dialog_yes);
+        liftBtn =  findViewById(R.id.dialog_yes);
         if (suretext == null || suretext.equals("")) {
         } else {
-            yes.setText(suretext);
+            liftBtn.setText(suretext);
         }
         dialogMsg = (TextView) findViewById(R.id.dialogMsg);
         if (title == null || text.equals("")) {
@@ -176,7 +174,7 @@ public class MyDialog extends Dialog{
 
     private void initAction() {
         if (type != DIALOG_ONEOPTION) {
-            no.setOnClickListener(new View.OnClickListener() {
+            RightBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     dialog.dismiss();
@@ -184,7 +182,7 @@ public class MyDialog extends Dialog{
                 }
             });
         }
-        yes.setOnClickListener(new View.OnClickListener() {
+        liftBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();

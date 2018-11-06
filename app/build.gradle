@@ -41,6 +41,8 @@ dependencies {
     compile 'com.github.chrisbanes.photoview:library:1.2.4'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.28'
 
+    compile 'com.github.florent37:expectanim:1.0.7'
+
     implementation 'com.github.albert-lii:AutoGridView:1.0.0'
     compile project(path: ':mylibrary')
     implementation project(':colozxing')

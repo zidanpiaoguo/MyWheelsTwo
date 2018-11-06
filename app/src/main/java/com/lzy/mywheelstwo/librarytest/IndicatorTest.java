@@ -71,7 +71,6 @@ public class IndicatorTest  extends AppCompatActivity{
             container.addView(textView,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
             return textView;
 
-
         }
 
         @Override

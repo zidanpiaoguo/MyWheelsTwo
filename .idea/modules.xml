@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyWheelsTwo.iml" filepath="$PROJECT_DIR$/MyWheelsTwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MyWheelsTwo.iml" filepath="$PROJECT_DIR$/.idea/MyWheelsTwo.iml" />
+      <module fileurl="file://D:\1Mywheels\MyWheelsTwo\MyWheelsTwo.iml" filepath="D:\1Mywheels\MyWheelsTwo\MyWheelsTwo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/colozxing/colozxing.iml" filepath="$PROJECT_DIR$/colozxing/colozxing.iml" />
       <module fileurl="file://$PROJECT_DIR$/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/mylibrary.iml" />

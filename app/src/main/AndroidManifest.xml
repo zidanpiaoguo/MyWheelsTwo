@@ -14,27 +14,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".librarytest.DialogTest" />
+        <activity android:name=".librarytest.DialogTest" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".librarytest.PictureTest" />
         <activity android:name=".librarytest.BigImageTest" />
         <activity
             android:name="com.lzy.mylibrary.utils.bigimage.ImagePreviewActivity"
             android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
-        <activity android:name=".librarytest.IndicatorTest"></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+
+        </activity>
+        <activity android:name=".librarytest.IndicatorTest">
+
+        </activity>
         <activity android:name=".librarytest.ZxingTest">
 
         </activity>
-        <activity android:name=".librarytest.EventActivity"></activity>
+        <activity android:name=".librarytest.EventActivity">
+
+        </activity>
 
 
         <activity android:name=".librarytest.BannerAcitvity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+
+        <activity android:name=".librarytest.ShopActivity">
+
+        </activity>
+
+        <activity android:name=".librarytest.spinnerTest">
+
         </activity>
     </application>
 

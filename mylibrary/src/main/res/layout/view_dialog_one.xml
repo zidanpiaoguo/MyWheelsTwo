@@ -7,7 +7,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
@@ -16,7 +16,7 @@
         >
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:minHeight="80dp"
@@ -25,7 +25,7 @@
 
             <TextView
                 android:id="@+id/text"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="标题"
@@ -34,7 +34,7 @@
 
             <TextView
                 android:id="@+id/dialogMsg"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
@@ -44,25 +44,31 @@
 
             <LinearLayout
                 android:id="@+id/des"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
             </LinearLayout>
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_color" />
+
+
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/view_dialog_bottom_bg"
             android:orientation="horizontal" >
 
-            <Button
+            <TextView
                 android:id="@+id/dialog_yes"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:layout_weight="1"
-                android:background="@drawable/view_dialog_one_btn_bg"
+                android:gravity="center"
+
                 android:padding="10dp"
                 android:text="确定"
                 android:textColor="#438AF5"

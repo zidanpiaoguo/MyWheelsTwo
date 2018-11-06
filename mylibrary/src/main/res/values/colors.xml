@@ -6,6 +6,6 @@
     <color name="app">#ff3c21</color>
     <color name="blue">#057dff</color>
     <color name="province_line_border">#C7C7C7</color>
-
+    <color name="light_gray">#fff5f5f5</color>
 
 </resources>

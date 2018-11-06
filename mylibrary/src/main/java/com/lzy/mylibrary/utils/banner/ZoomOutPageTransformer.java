@@ -21,13 +21,7 @@ public class ZoomOutPageTransformer implements ViewPager.PageTransformer {
 
         } else if (position <= 1) {
             ////a页滑动至b页 ； a页从 0.0 -1 ；b页从1 ~ 0.0  [-1,1]
-
-
             float scaleFactor = MIN_SCALE + (1 - Math.abs(position)) * (MAX_SCALE - MIN_SCALE);
-
-
-
-
 
             //每次滑动后进行微小的移动目的是为了防止在三星的某些手机上出现两边的页面为显示的情况
             if (position > 0) {

@@ -96,7 +96,7 @@ public class DialogTest extends Activity {
     }
 
     private void twoDialog() {
-        new MyDialog(this, MyDialog.DIALOG_TWOOPTION, "提示", "你是一个bug", new MyDialogOnClick() {
+        new MyDialog(this, MyDialog.DIALOG_TWOOPTION, "你是一个bug", "", new MyDialogOnClick() {
             @Override
             public void sureOnClick(View v) {
                 MyToast.makeText("确定");
